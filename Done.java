@@ -39,5 +39,8 @@ class Management {
         System.out.println("Name: " + name);
         System.out.println("GPA: " + cgpa);
         System.out.println("Grade: " + findgrade(cgpa));
+        System.out.println("Grade: " + findgrade(cgpa));
+        System.out.println("Grade: " + findgrade(cgpa));
+
     }
 }
