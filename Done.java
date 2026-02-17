@@ -6,6 +6,7 @@ public class Done{
         student.setname();
         student.setgpa();
         student.display();
+        //working
     }
 }
 class Management {
@@ -41,6 +42,7 @@ class Management {
         System.out.println("Grade: " + findgrade(cgpa));
         System.out.println("Grade: " + findgrade(cgpa));
         System.out.println("Grade: " + findgrade(cgpa));
+        
 
     }
 }
