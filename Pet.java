@@ -1,27 +1,34 @@
-public class BankAccount {
+public class Pet {
     private String accountNumber;
     private String accountHolder;
     private String accountType;
     private double balance;
-
-    public BankAccount()
+    public static void main(String[] args)
     {
-        this.accountNumber="0000";
-        this.accountHolder = "Unknown";
-        this.balance = 0.0;
-        this.accountType = "Saving";
+        Pet p1=new dog();
+        p1.methos();
+        Pet p2;new cat();
+        
     }
-    
-    public BankAccount(String accountNumber, String accountHolder)
-    {
-        this.accountNumber="0000";
-        this.accountHolder = "Unknown";
-        this.balance = 0.0;
-        this.accountType = "Saving";
-        this.accountType = "Saving";
-        this.accountType = "Saving";
+    public void methos() {
+        System.out.println("Pet method");
     }
+}
 
+
+class dog extends Pet{
+    int dog_id;
+    public void methos()
+    {
+        System.out.println("Hello");
+    }
+}
+class cat extends Pet{
+    int cat_id;
+    public cat()
+    {
+        System.out.println("Hello");
+    }
 }
 
 // 2) Constructor with 2 parameters:
