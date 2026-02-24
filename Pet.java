@@ -6,12 +6,10 @@ public class Pet {
     public static void main(String[] args)
     {
         Pet p1=new dog();
-        p1.methos();
-        Pet p2;new cat();
-        
-    }
-    public void methos() {
-        System.out.println("Pet method");
+        dog p=(dog) p1;
+        p.methos();
+
+
     }
 }
 
