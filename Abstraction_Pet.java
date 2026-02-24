@@ -1,29 +1,28 @@
-public class Pet {
+public abstract class Abstraction_Pet {
     private String accountNumber;
     private String accountHolder;
     private String accountType;
     private double balance;
     public static void main(String[] args)
     {
-        Pet p1=new dog();
-        dog p=(dog) p1;
-        p.methos();
-
-
+        Abstraction_Pet p1=new dog();
+        p1=new cat();
+        p1.methos();
+        p1.methos();
     }
+    public abstract void methos();
 }
 
 
-class dog extends Pet{
+class dog extends Abstraction_Pet{
     int dog_id;
     public void methos()
     {
         System.out.println("Hello");
     }
 }
-class cat extends Pet{
-    int cat_id;
-    public cat()
+class cat extends Abstraction_Pet{
+    public void methos()
     {
         System.out.println("Hello");
     }
