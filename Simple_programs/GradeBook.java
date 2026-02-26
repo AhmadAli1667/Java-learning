@@ -1,3 +1,4 @@
+package Simple_programs;
 import java.util.Scanner;
 
 public class GradeBook {

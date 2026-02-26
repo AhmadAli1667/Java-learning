@@ -1,3 +1,4 @@
+package Simple_programs;
 public class BankAccount {
    private String accountNumber;
     private String accountHolderName;
@@ -29,7 +30,7 @@ public class BankAccount {
     {
         this.accountNumber=accountNumber;
         this.accountHolderName=accountHolderName;
-        if(balance>=0 && accountType=="Saving"||accountType=="Current")//Validation check 
+        if(balance>=0 && (accountType.equals("Saving")||accountType.equals("Current")))//Validation check 
          {  
             this.balance=balance;
             this.accountType=accountType;
@@ -43,7 +44,7 @@ public class BankAccount {
     }
     public void deposit(double amount){
         if(amount>0)//deposit validation
-        {    this.balance+=balance;
+        {    this.balance+=amount;
              System.out.println("\t\tSuccessful Deposit! \nBalance= "+this.balance);//Success message
     }
     }
