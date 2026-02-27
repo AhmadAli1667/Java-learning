@@ -18,6 +18,7 @@ public class Person {
     public void display() {
         System.out.println("\n\t\tInformation:");
         System.out.println("NAME = " + this.name);
+        System.out.println("NAME = " + this.name);
         System.out.println("Address = " + this.address);
         System.out.println("Phone number = " + this.phone_number);
         System.out.println("Email = " + this.email);
