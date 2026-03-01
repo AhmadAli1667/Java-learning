@@ -1,4 +1,5 @@
-public class Person {
+package KEY_CONCEPTS;
+public class Person_usingsuper {
     String name = "Ahmad";
     String address = "HOUSE 253";
     String phone_number = "0233223";
@@ -25,7 +26,7 @@ public class Person {
     }
 }
 
-class Student extends Person {
+class Student extends Person_usingsuper {
 
     String status;
 
@@ -36,7 +37,7 @@ class Student extends Person {
     }
 }
 
-class Employee extends Person {
+class Employee extends Person_usingsuper {
 
     String office;
     Double salary;
