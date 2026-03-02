@@ -16,7 +16,8 @@ public class arraylist_dynamic_Employee {
  }
 public static void main(String []args)
 {
-ArrayList<arraylist_dynamic_Employee> employees = new ArrayList<>(List.of(
+ArrayList<arraylist_dynamic_Employee> employees = new ArrayList<>
+(List.of(
     new FullTimeFaculty("Ali", 101, "CS"),
     new PartTimeFaculty("Sara", 102, "Math"),
     new AdministrativeStaff("Ahmed", 103, "Admin"),
