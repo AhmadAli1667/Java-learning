@@ -1,3 +1,4 @@
+package Simple_programs;
 import java.util.ArrayList;
 
 abstract class Appliance {
