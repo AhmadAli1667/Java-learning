@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 abstract class Appliance {
     String applianceName; //defining data members
     int wattage;
@@ -14,18 +16,18 @@ abstract class Appliance {
     public void turnOn()
     {
         this.isON=true;
-        System.out.println(this.applianceName+" is now ON");
+        System.out.println("\n"+this.applianceName+" is now ON");
     }
     public void turnOff()
     {
         this.isON=false;
-        System.out.println(this.applianceName+" is now OFF");
+        System.out.println("\n"+this.applianceName+" is now OFF");
     }
     
     public void getStatus()
     {
-        this.isON=false;//checking to false
-        System.out.println(this.applianceName+ " | Wattage: "+ this.wattage+ "W | Status: ON/OFF");//printing data
+        String status = isON ? "ON" : "OFF";//checking if ON or OFF
+        System.out.println(applianceName + " | Wattage: " + wattage + "W | Status: " + status);//Printing Information
     }
     
     
@@ -70,34 +72,53 @@ class WashingMachine extends Appliance
         this.loadKg=loadKg;
         this.cycleMinutes=cycleMinutes;
     }
-    
+
     public double calculateHourlyCost(double ratePerKwh){
         return (wattage / 1000.0) * ratePerKwh * (cycleMinutes / 60.0); //returning calculated data
     }
-    public void operate()
-    {
-        System.out.println("Washing "+this.loadKg+" with Cycle "+this.cycleMinutes);//operating function loading
-    }
+  public void operate()
+{
+    System.out.println("Washing " + this.loadKg + "kg load. Cycle: " + this.cycleMinutes + " minutes");
+}
 
 }
 class SmartController
 {
     void schedule(Appliance a)//single parameter function
     {
-        System.out.println("Scheduled "+a+" with default 1-hour runtime");
+        System.out.println("\nScheduled "+a.applianceName+" with default 1-hour runtime");
     }
-    void schedule(Appliance a,int hourse)//DOUBle overloaded parameter function
+    void schedule(Appliance a,int hours)//DOUBle overloaded parameter function
     {
-        System.out.println("Scheduled "+a+" with default 1-hour runtime");
+        System.out.println("\nScheduled "+a.applianceName+" for "+hours+" hours");
     }
     void schedule(Appliance a, int hours, String timeSlot)//Triple overloaded parameter function
     {
-        System.out.println("Scheduled "+a+" with default 1-hour runtime");
+        System.out.println("\nScheduled "+a.applianceName+"for "+hours+" hours at "+timeSlot);
     }
 }
-
-// (d)  Method Overloading — class SmartController  [2 Marks]
-// Create a separate class SmartController with an overloaded method schedule():
-// • schedule(Appliance a)  — prints: "Scheduled <name> with default 1-hour runtime"
-// • schedule(Appliance a, int hours)  — prints: "Scheduled <name> for <hours> hours"
-// • schedule(Appliance a, int hours, String timeSlot)  — prints: "Scheduled <name> for <hours> hours at <timeSlot>"
+public class SmartHome
+{
+   public static void main(String[] args) {
+      ArrayList<Appliance> A = new ArrayList<>(); 
+      A.add(new AirConditioner(23, true, 2000));//calling constructors
+      A.add(new WashingMachine(60, 5.0, 1500));
+      
+      // Turn on and operate
+      for (Appliance appliance : A) {//calling methods
+         appliance.turnOn();
+         appliance.operate();
+         appliance.getStatus();
+      }
+      
+      // SmartController scheduling
+      SmartController controller = new SmartController();//making smart controller objects
+      controller.schedule(A.get(0));
+      controller.schedule(A.get(0), 2);//making constructor
+      controller.schedule(A.get(0), 2, "10:00 AM");
+      
+      // Print hourly costs
+      System.out.println("\nAC hourly cost: Rs. " + A.get(0).calculateHourlyCost(25));
+      System.out.println("Washing Machine hourly cost: Rs. " + A.get(1).calculateHourlyCost(25));
+   }
+}
