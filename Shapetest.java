@@ -47,6 +47,7 @@ abstract class ThreeDimensionalShape extends Shape {
     @Override
     public void displayDetails() {
         System.out.println("Type: 3D Shape");
+        System.out.println("Type: 3D Shape");
         System.out.println("Surface Area: " + getArea());
         System.out.println("Volume: " + getVolume());
     }
