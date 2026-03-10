@@ -204,6 +204,7 @@ class Circle extends TwoDimensionalShape {
 
 class Square extends TwoDimensionalShape {
     private double side;
+    private double side;
     
     public Square(double side) {
         this.side = side;
