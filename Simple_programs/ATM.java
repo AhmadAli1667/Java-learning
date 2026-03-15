@@ -15,6 +15,8 @@ public class ATM {
     // Default constructor
     public ATM() {
         this.password = "1234";
+        this.password = "1234";
+        this.password = "1234";
         this.name = "Unknown";
         this.balance = 10000;
         this.accountType = "Saving";
